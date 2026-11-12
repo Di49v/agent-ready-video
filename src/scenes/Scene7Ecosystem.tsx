@@ -3,8 +3,6 @@ import { AbsoluteFill, Sequence } from 'remotion';
 import { ChapterCard } from '../components/ChapterCard';
 import { FramedViewport } from '../components/FramedViewport';
 
-export const Scene7Ecosystem:tsx = () => {};
-
 export const Scene7Ecosystem: React.FC = () => {
   return (
     <AbsoluteFill>
