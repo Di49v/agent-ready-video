@@ -111,35 +111,9 @@ export const Scene7Ecosystem: React.FC = () => {
         />
       </Sequence>
 
-      {/* 2s - 6s (120 frames): Deliverables Hub Showcase (REST API, MCP, SDK, Postman, Badge) */}
-      <Sequence from={60} durationInFrames={120}>
-        <FramedViewport
-          videoFile="landingpage.mp4"
-          startFrom={990}
-          endAt={1230}
-          playbackRate={2.0}
-          stepBadge="05 · DELIVERABLES HUB"
-          featureTitle="REST API • APIMatic SDK • 5-Tool MCP Server • Postman • SVG Badge"
-          sponsorBadge="Built API-First for CI/CD & AI Coding Assistants"
-          accentColor="#A855F7"
-          cameraKeyframes={[
-            { frame: 0, scale: 1.0, x: 0, y: 0 },
-            { frame: 60, scale: 1.18, x: 0, y: -25 },
-            { frame: 120, scale: 1.0, x: 0, y: 0 },
-          ]}
-          captions={[
-            {
-              startFrame: 0,
-              endFrame: 120,
-              text: 'Everything is API-first: run tests from your IDE via our 5-tool MCP server,',
-              highlight: 'export Postman collections, or embed live SVG safety badges.',
-            },
-          ]}
-        />
-      </Sequence>
 
       {/* 6s - 23s (510 frames): Dynamic 5-Sponsor Spotlight Sequence (102 frames / 3.4s per sponsor) */}
-      <Sequence from={180} durationInFrames={510}>
+      <Sequence from={60} durationInFrames={510}>
         <SponsorArchitectureStage />
       </Sequence>
     </AbsoluteFill>
