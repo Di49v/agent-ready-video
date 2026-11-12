@@ -12,17 +12,18 @@ export const ChapterCard: React.FC<ChapterCardProps> = ({
   stepNumber,
   title,
   subtitle,
-  accentColor = '#10b981',
+  accentColor = '#38BDF8',
 }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
 
-  const enterScale = spring({
+  const enterProgress = spring({
     frame,
     fps,
-    config: { damping: 14, stiffness: 130 },
+    config: { damping: 18, stiffness: 120 },
   });
 
+  const translateY = interpolate(enterProgress, [0, 1], [18, 0]);
   const opacity = interpolate(
     frame,
     [0, 10, durationInFrames - 10, durationInFrames],
@@ -41,42 +42,52 @@ export const ChapterCard: React.FC<ChapterCardProps> = ({
     >
       <div
         style={{
-          transform: `scale(${enterScale})`,
+          transform: `translateY(${translateY}px)`,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center',
-          maxWidth: 1280,
+          maxWidth: 1240,
           padding: '0 48px',
         }}
       >
         <div
           style={{
-            padding: '8px 22px',
-            borderRadius: 999,
-            backgroundColor: 'rgba(15, 23, 42, 0.9)',
-            border: `1.5px solid ${accentColor}`,
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 10,
+            padding: '6px 16px',
+            borderRadius: 6,
+            backgroundColor: 'rgba(15, 23, 42, 0.85)',
+            border: '1px solid rgba(148, 163, 184, 0.2)',
             color: accentColor,
             fontFamily: 'monospace',
-            fontSize: 20,
-            fontWeight: 800,
-            letterSpacing: 4,
+            fontSize: 15,
+            fontWeight: 700,
+            letterSpacing: 3,
             textTransform: 'uppercase',
-            marginBottom: 24,
-            boxShadow: `0 0 30px ${accentColor}33`,
+            marginBottom: 22,
           }}
         >
+          <span
+            style={{
+              width: 7,
+              height: 7,
+              borderRadius: '50%',
+              backgroundColor: accentColor,
+            }}
+          />
           {stepNumber}
         </div>
 
         <h1
           style={{
-            fontSize: 78,
-            fontWeight: 900,
+            fontSize: 66,
+            fontWeight: 700,
             color: '#F8FAFC',
-            letterSpacing: '-1.5px',
-            margin: '0 0 18px 0',
-            lineHeight: 1.08,
+            letterSpacing: '-1.8px',
+            margin: '0 0 16px 0',
+            lineHeight: 1.1,
           }}
         >
           {title}
@@ -84,12 +95,12 @@ export const ChapterCard: React.FC<ChapterCardProps> = ({
 
         <p
           style={{
-            fontSize: 30,
+            fontSize: 24,
             color: '#94A3B8',
-            fontWeight: 500,
+            fontWeight: 400,
             margin: 0,
-            maxWidth: 920,
-            lineHeight: 1.4,
+            maxWidth: 880,
+            lineHeight: 1.45,
           }}
         >
           {subtitle}
