@@ -53,13 +53,13 @@ export const MainVideo: React.FC = () => {
         <Scene6JudgeArena />
       </Sequence>
 
-      {/* 7. ECOSYSTEM & 5 SPONSORS (119s - 127s / 240 frames) */}
-      <Sequence from={3570} durationInFrames={240}>
+      {/* 7. ECOSYSTEM & 5 SPONSORS (119s - 142s / 690 frames = 23s) */}
+      <Sequence from={3570} durationInFrames={690}>
         <Scene7Ecosystem />
       </Sequence>
 
-      {/* 8. OUTRO & CLOSING (127s - 136s / 270 frames) */}
-      <Sequence from={3810} durationInFrames={270}>
+      {/* 8. OUTRO & CLOSING (142s - 151s / 270 frames = 9s) */}
+      <Sequence from={4260} durationInFrames={270}>
         <Scene8Outro />
       </Sequence>
     </AbsoluteFill>

@@ -7,7 +7,7 @@ export const Root: React.FC = () => {
     <Composition
       id="CodeCovenVideo"
       component={MainVideo}
-      durationInFrames={4080} // 2 mins 16 secs at 30fps (Well under 3:00 cap)
+      durationInFrames={4530} // 2 mins 31 secs at 30fps
       fps={30}
       width={1920}
       height={1080}
